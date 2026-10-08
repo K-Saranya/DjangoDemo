@@ -1,0 +1,37 @@
+{% extends "index.html" %} {% block products %}
+<!-- Products Section -->
+<section class="max-w-7xl mx-auto px-6 py-10">
+  <!-- Product Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {% for i in products %}
+    <div
+      class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition"
+    >
+      <!-- Product Image -->
+      <img
+        src="{{i.dress_image}}"
+        alt="Running Shoes"
+        class="w-full h-56 object-cover"
+      />
+
+      <!-- Product Details -->
+      <div class="p-5">
+
+        <h2 class="text-xl font-semibold text-gray-800 mt-2">{{i.dress_name}}</h2>
+
+        <!-- Price -->
+        <div class="flex items-center justify-between mt-5">
+          <span class="text-xl font-bold text-gray-900"> ₹{{i.dress_price}}</span>
+
+          <button
+            class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock products %}
